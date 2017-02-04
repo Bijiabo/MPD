@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>MPD</title>
   <subtitle>产品经理背锅指南</subtitle>
-  <link href="/atom.xml" rel="self"/>
+  <link href="/MPD/atom.xml" rel="self"/>
   
   <link href="https://bijiabo.github.io/MPD/"/>
   <updated>2017-02-04T17:14:16.000Z</updated>

@@ -40,10 +40,11 @@
     <link href="https://productdoggie.github.io/MPD/2017/02/05/%E7%89%A9%E8%81%94%E7%BD%91%E7%BA%BF%E4%B8%8A%E5%B9%B3%E5%8F%B0%E9%A1%B9%E7%9B%AE-HTML5-%E5%BC%80%E5%8F%91%E6%8C%87%E5%8D%97/"/>
     <id>https://productdoggie.github.io/MPD/2017/02/05/物联网线上平台项目-HTML5-开发指南/</id>
     <published>2017-02-04T17:01:48.000Z</published>
-    <updated>2017-02-05T07:01:58.000Z</updated>
+    <updated>2017-02-05T07:21:22.000Z</updated>
     
     <content type="html"><![CDATA[<p>希望能够总结一下先前踩过的坑以及一些思考，或许有助于小组对接外包资源以及内部产品团队加深对于项目接入过程中开发、联调的理解。</p>
 <h2 id="基本原理"><a href="#基本原理" class="headerlink" title="基本原理"></a>基本原理</h2><p>现有支持接入的物联网线上平台（如<code>阿里智能</code>、<code>京东微联</code>、<code>苏宁易购</code>等），普遍采用开放 <code>HTML5 SDK</code> 的方式来接入新的产品。即与云端、设备的通讯交互交由平台方的原生应用框架来完成，具体业务逻辑层，厂商、开发者只需使用官方提供的 <code>SDK/API</code> 进行 <code>HTML5</code> 页面、设备端的开发，通过平台提供的具体接入方式集成到应用中即可。</p>
+<p><img src="images/2017-02-05 15-19-18.jpg" alt=""></p>
 <p>此处补充一张图片，介绍基本通讯、控制逻辑。</p>
 <p>主要分为两个部分：</p>
 <ul>

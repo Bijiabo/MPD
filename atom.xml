@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>MPD</title>
-  <subtitle>产品经理背锅指南</subtitle>
+  <subtitle>M***** AP组 产品经理背锅指北</subtitle>
   <link href="/MPD/atom.xml" rel="self"/>
   
   <link href="https://productdoggie.github.io/MPD/"/>
-  <updated>2017-02-04T17:14:16.000Z</updated>
+  <updated>2017-02-05T06:58:06.000Z</updated>
   <id>https://productdoggie.github.io/MPD/</id>
   
   <author>
@@ -20,21 +20,43 @@
     <link href="https://productdoggie.github.io/MPD/2017/02/05/%E7%89%A9%E8%81%94%E7%BD%91%E7%BA%BF%E4%B8%8A%E5%B9%B3%E5%8F%B0%E9%A1%B9%E7%9B%AE-HTML5-%E5%BC%80%E5%8F%91%E6%8C%87%E5%8D%97/"/>
     <id>https://productdoggie.github.io/MPD/2017/02/05/物联网线上平台项目-HTML5-开发指南/</id>
     <published>2017-02-04T17:01:48.000Z</published>
-    <updated>2017-02-04T17:14:16.000Z</updated>
+    <updated>2017-02-05T06:58:06.000Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="基本原理"><a href="#基本原理" class="headerlink" title="基本原理"></a>基本原理</h2><p>理解现有物联网线上平台 APP 开发原理，主要分为两个部分：</p>
+    <content type="html"><![CDATA[<p>希望能够总结一下先前踩过的坑以及一些思考，或许有助于小组对接外包资源以及内部产品团队加深对于项目接入过程中开发、联调的理解。</p>
+<h2 id="基本原理"><a href="#基本原理" class="headerlink" title="基本原理"></a>基本原理</h2><p>现有支持接入的物联网线上平台（如<code>阿里智能</code>、<code>京东微联</code>、<code>苏宁易购</code>等），普遍采用开放 <code>HTML5 SDK</code> 的方式来接入新的产品。即与云端、设备的通讯交互交由平台方的原生应用框架来完成，具体业务逻辑层，厂商、开发者只需使用官方提供的 <code>SDK/API</code> 进行 <code>HTML5</code> 页面、设备端的开发，通过平台提供的具体接入方式集成到应用中即可。</p>
+<p>此处补充一张图片，介绍基本通讯、控制逻辑。</p>
+<p>主要分为两个部分：</p>
 <ul>
 <li>原生 APP 框架层</li>
-<li>物联网设备应用层<h2 id="物联网平台"><a href="#物联网平台" class="headerlink" title="物联网平台"></a>物联网平台</h2>这里简单讲述一下现在普遍支持接入的一些物联网平台<h2 id="前期准备工作"><a href="#前期准备工作" class="headerlink" title="前期准备工作"></a>前期准备工作</h2>这里简单罗列一下基础技能准备和工具、环境准备，先笼统的说，然后在 根据平台说明一下差异点。<h3 id="基础技能"><a href="#基础技能" class="headerlink" title="基础技能"></a>基础技能</h3><h3 id="工具、环境准备"><a href="#工具、环境准备" class="headerlink" title="工具、环境准备"></a>工具、环境准备</h3><h3 id="注意的点（常识、意识居多）"><a href="#注意的点（常识、意识居多）" class="headerlink" title="注意的点（常识、意识居多）"></a>注意的点（常识、意识居多）</h3><h2 id="业务层开发逻辑"><a href="#业务层开发逻辑" class="headerlink" title="业务层开发逻辑"></a>业务层开发逻辑</h2>这里主要是提及线上平台 HTML5 的生命周期总结<h2 id="开发实战"><a href="#开发实战" class="headerlink" title="开发实战"></a>开发实战</h2><h3 id="从取暖器项目开始"><a href="#从取暖器项目开始" class="headerlink" title="从取暖器项目开始"></a>从取暖器项目开始</h3><h4 id="分析项目需求和文档"><a href="#分析项目需求和文档" class="headerlink" title="分析项目需求和文档"></a>分析项目需求和文档</h4><h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2>一些吐槽的点、以及 PD 在此开发过程中需要注意的事情。</li>
+<li>物联网设备应用层<h2 id="物联网平台"><a href="#物联网平台" class="headerlink" title="物联网平台"></a>物联网平台</h2>这里简单讲述一下现在普遍支持接入的一些物联网平台<h3 id="阿里智能"><a href="#阿里智能" class="headerlink" title="阿里智能"></a>阿里智能</h3>设备接入量大，品类丰富，文档比较完善，也是目前我们做的量最多的平台。</li>
+</ul>
+<ul>
+<li>开放平台文档：<a href="https://open.aliplus.com/docs/open/?spm=0.0.0.0.T1e2Ni" target="_blank" rel="external">链接</a></li>
+<li>前端文档中心：<a href="https://open.aliplus.com/docs/h5/guide/?spm=0.0.0.0.FzZkVV" target="_blank" rel="external">链接</a></li>
+<li>厂测包 APP 下载：<a href="https://open.aliplus.com/download/?spm=0.0.0.0.T1e2Ni" target="_blank" rel="external">链接</a></li>
+</ul>
+<h3 id="京东微联"><a href="#京东微联" class="headerlink" title="京东微联"></a>京东微联</h3><p>平台相对完善，配合京东平台销售渠道，对于厂商来说是一个不错的选择。</p>
+<ul>
+<li>开发指引及相关文档：<a href="http://devsmart.jd.com/dev/apiDocDir" target="_blank" rel="external">链接</a><h3 id="苏宁智能"><a href="#苏宁智能" class="headerlink" title="苏宁智能"></a>苏宁智能</h3>比较新的平台，问题还比较多，刚刚看到官方发布了非正式的文档，需要厂商登陆账号后到 <a href="http://opensh.suning.com/shsys-web/openPlatform/account/jszc.htm" target="_blank" rel="external">苏宁智能开放平台支持中心</a> 进行下载。</li>
+</ul>
+<h3 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h3><p>没有明确资料和相关文档的平台不做讨论，暂时都列为其他平台范畴，如华为、国美，现在还处于踩坑期。</p>
+<p>米家等相对封闭的平台暂不列入讨论范围。</p>
+<h2 id="前期准备工作"><a href="#前期准备工作" class="headerlink" title="前期准备工作"></a>前期准备工作</h2><p>这里简单罗列一下基础技能准备和工具、环境准备，先笼统的说，然后再 根据平台说明一下差异点。</p>
+<h3 id="基础技能"><a href="#基础技能" class="headerlink" title="基础技能"></a>基础技能</h3><p>目前物联网线上平台应用的开发复杂度较低，普遍来说，只需掌握下面三项的入门基础，已经可以常识进行开发了。</p>
+<ul>
+<li><a href="https://zh.wikipedia.org/zh-hans/HTML" target="_blank" rel="external">HTML</a><br>  页面的显示内容主要由它来承载</li>
+<li><a href="https://zh.wikipedia.org/wiki/层叠样式表" target="_blank" rel="external">CSS</a><br>  界面的颜色、字体、排版就主要靠它了</li>
+<li><a href="https://zh.wikipedia.org/wiki/JavaScript" target="_blank" rel="external">JavaScript</a><br>  不是 Java，主要负责界面的交互和界面上关于设备数据、状态显示的更新<h3 id="工具、环境准备"><a href="#工具、环境准备" class="headerlink" title="工具、环境准备"></a>工具、环境准备</h3></li>
+<li>谷歌浏览器<br>  由于涉及到开发、联调过程中的真机调试，需要使用谷歌浏览器的开发者工具调试手机上的界面，所以是必须的。曾经在项目过程中遇到一位刚接触这种应用开发的外包前端工程师，项目进度拖延了很多，后来沟通后发现是没有使用开发者工具进行真机调试导致的，浪费了大量时间。</li>
+<li>安卓手机<br>  同上，主要是真机调试使用，这方面各平台均提供了专门用于开发可调试的 APP 版本或在应用中内置了调试模式，方便工程师使用。</li>
+<li>可访问外部资源的网络<br>  实际项目进行过程中发现有些厂商的环境是限制员工访问外部网络的，而 APP 和设备对于外部网络的访问是必须的，需要事先协调。另外大环境限制，，谷歌浏览器开发者工具在第一次加载的时候会需要请求部分国内访问不到的资源，需要在这里有所准备。<h3 id="注意的点（常识、意识居多）"><a href="#注意的点（常识、意识居多）" class="headerlink" title="注意的点（常识、意识居多）"></a>注意的点（常识、意识居多）</h3><h2 id="业务层开发逻辑"><a href="#业务层开发逻辑" class="headerlink" title="业务层开发逻辑"></a>业务层开发逻辑</h2>这里主要是提及线上平台 HTML5 的生命周期总结<h2 id="开发实战"><a href="#开发实战" class="headerlink" title="开发实战"></a>开发实战</h2><h3 id="从取暖器项目开始"><a href="#从取暖器项目开始" class="headerlink" title="从取暖器项目开始"></a>从取暖器项目开始</h3><h4 id="分析项目需求和文档"><a href="#分析项目需求和文档" class="headerlink" title="分析项目需求和文档"></a>分析项目需求和文档</h4><h2 id="其他-1"><a href="#其他-1" class="headerlink" title="其他"></a>其他</h2>一些吐槽的点、以及 PD 在此开发过程中需要注意的事情。</li>
 </ul>
 ]]></content>
     
     <summary type="html">
     
-      &lt;h2 id=&quot;基本原理&quot;&gt;&lt;a href=&quot;#基本原理&quot; class=&quot;headerlink&quot; title=&quot;基本原理&quot;&gt;&lt;/a&gt;基本原理&lt;/h2&gt;&lt;p&gt;理解现有物联网线上平台 APP 开发原理，主要分为两个部分：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;原生 APP 框架层&lt;/li&gt;
-&lt;l
+      &lt;p&gt;希望能够总结一下先前踩过的坑以及一些思考，或许有助于小组对接外包资源以及内部产品团队加深对于项目接入过程中开发、联调的理解。&lt;/p&gt;
+&lt;h2 id=&quot;基本原理&quot;&gt;&lt;a href=&quot;#基本原理&quot; class=&quot;headerlink&quot; title=&quot;基本原理&quot;&gt;&lt;/a&gt;基本原理
     
     </summary>
     

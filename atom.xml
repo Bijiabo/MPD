@@ -40,12 +40,11 @@
     <link href="https://productdoggie.github.io/MPD/2017/02/05/%E7%89%A9%E8%81%94%E7%BD%91%E7%BA%BF%E4%B8%8A%E5%B9%B3%E5%8F%B0%E9%A1%B9%E7%9B%AE-HTML5-%E5%BC%80%E5%8F%91%E6%8C%87%E5%8D%97/"/>
     <id>https://productdoggie.github.io/MPD/2017/02/05/物联网线上平台项目-HTML5-开发指南/</id>
     <published>2017-02-04T17:01:48.000Z</published>
-    <updated>2017-02-05T07:21:22.000Z</updated>
+    <updated>2017-02-05T07:58:00.000Z</updated>
     
     <content type="html"><![CDATA[<p>希望能够总结一下先前踩过的坑以及一些思考，或许有助于小组对接外包资源以及内部产品团队加深对于项目接入过程中开发、联调的理解。</p>
 <h2 id="基本原理"><a href="#基本原理" class="headerlink" title="基本原理"></a>基本原理</h2><p>现有支持接入的物联网线上平台（如<code>阿里智能</code>、<code>京东微联</code>、<code>苏宁易购</code>等），普遍采用开放 <code>HTML5 SDK</code> 的方式来接入新的产品。即与云端、设备的通讯交互交由平台方的原生应用框架来完成，具体业务逻辑层，厂商、开发者只需使用官方提供的 <code>SDK/API</code> 进行 <code>HTML5</code> 页面、设备端的开发，通过平台提供的具体接入方式集成到应用中即可。</p>
-<p><img src="images/2017-02-05 15-19-18.jpg" alt=""></p>
-<p>此处补充一张图片，介绍基本通讯、控制逻辑。</p>
+<p>一般我们开发应用的模式：<br><img src="http://okw4n9e5h.bkt.clouddn.com/%E7%94%A8%E4%BA%8E%E5%AF%BC%E5%87%BA%E5%9B%BE%E7%89%87_%E5%BF%AB%E9%80%9F%E5%BC%80%E5%8F%91%E6%99%BA%E8%83%BD%E7%A1%AC%E4%BB%B6%20App%20%E4%BB%8B%E7%BB%8D.003.jpeg" alt=""><br>对于物联网线上应用开发，数据以设备为准：<br><img src="http://okw4n9e5h.bkt.clouddn.com/%E7%94%A8%E4%BA%8E%E5%AF%BC%E5%87%BA%E5%9B%BE%E7%89%87_%E5%BF%AB%E9%80%9F%E5%BC%80%E5%8F%91%E6%99%BA%E8%83%BD%E7%A1%AC%E4%BB%B6%20App%20%E4%BB%8B%E7%BB%8D.004.jpeg" alt=""></p>
 <p>主要分为两个部分：</p>
 <ul>
 <li>原生 APP 框架层</li>
@@ -70,7 +69,7 @@
 <li><a href="https://zh.wikipedia.org/wiki/JavaScript" target="_blank" rel="external">JavaScript</a><br>  不是 Java，主要负责界面的交互和界面上关于设备数据、状态显示的更新<h3 id="工具、环境准备"><a href="#工具、环境准备" class="headerlink" title="工具、环境准备"></a>工具、环境准备</h3></li>
 <li>谷歌浏览器<br>  由于涉及到开发、联调过程中的真机调试，需要使用谷歌浏览器的开发者工具调试手机上的界面，所以是必须的。曾经在项目过程中遇到一位刚接触这种应用开发的外包前端工程师，项目进度拖延了很多，后来沟通后发现是没有使用开发者工具进行真机调试导致的，浪费了大量时间。</li>
 <li>安卓手机<br>  同上，主要是真机调试使用，这方面各平台均提供了专门用于开发可调试的 APP 版本或在应用中内置了调试模式，方便工程师使用。</li>
-<li>可访问外部资源的网络<br>  实际项目进行过程中发现有些厂商的环境是限制员工访问外部网络的，而 APP 和设备对于外部网络的访问是必须的，需要事先协调。另外大环境限制，谷歌浏览器开发者工具在第一次加载的时候会需要请求部分国内访问不到的资源，需要在这里有所准备。<h3 id="注意的点（常识、意识居多）"><a href="#注意的点（常识、意识居多）" class="headerlink" title="注意的点（常识、意识居多）"></a>注意的点（常识、意识居多）</h3><h2 id="业务层开发逻辑"><a href="#业务层开发逻辑" class="headerlink" title="业务层开发逻辑"></a>业务层开发逻辑</h2>这里主要是提及线上平台 HTML5 的生命周期总结<h2 id="开发实战"><a href="#开发实战" class="headerlink" title="开发实战"></a>开发实战</h2><h3 id="从取暖器项目开始"><a href="#从取暖器项目开始" class="headerlink" title="从取暖器项目开始"></a>从取暖器项目开始</h3><h4 id="分析项目需求和文档"><a href="#分析项目需求和文档" class="headerlink" title="分析项目需求和文档"></a>分析项目需求和文档</h4><h2 id="其他-1"><a href="#其他-1" class="headerlink" title="其他"></a>其他</h2>一些吐槽的点、以及 PD 在此开发过程中需要注意的事情。</li>
+<li>可访问外部资源的网络<br>  实际项目进行过程中发现有些厂商的环境是限制员工访问外部网络的，而 APP 和设备对于外部网络的访问是必须的，需要事先协调。另外大环境限制，谷歌浏览器开发者工具在第一次加载的时候会需要请求部分国内访问不到的资源，需要在这里有所准备。<h3 id="注意的点（常识、意识居多）"><a href="#注意的点（常识、意识居多）" class="headerlink" title="注意的点（常识、意识居多）"></a>注意的点（常识、意识居多）</h3><h2 id="业务层开发逻辑"><a href="#业务层开发逻辑" class="headerlink" title="业务层开发逻辑"></a>业务层开发逻辑</h2>这里主要是提及线上平台 HTML5 的生命周期总结<br><img src="http://okw4n9e5h.bkt.clouddn.com/%E7%94%A8%E4%BA%8E%E5%AF%BC%E5%87%BA%E5%9B%BE%E7%89%87_%E5%BF%AB%E9%80%9F%E5%BC%80%E5%8F%91%E6%99%BA%E8%83%BD%E7%A1%AC%E4%BB%B6%20App%20%E4%BB%8B%E7%BB%8D.012.jpeg" alt=""><h2 id="开发实战"><a href="#开发实战" class="headerlink" title="开发实战"></a>开发实战</h2><h3 id="从取暖器项目开始"><a href="#从取暖器项目开始" class="headerlink" title="从取暖器项目开始"></a>从取暖器项目开始</h3><h4 id="分析项目需求和文档"><a href="#分析项目需求和文档" class="headerlink" title="分析项目需求和文档"></a>分析项目需求和文档</h4><h2 id="其他-1"><a href="#其他-1" class="headerlink" title="其他"></a>其他</h2>一些吐槽的点、以及 PD 在此开发过程中需要注意的事情。</li>
 </ul>
 ]]></content>
     
